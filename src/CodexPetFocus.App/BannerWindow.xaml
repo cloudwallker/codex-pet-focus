@@ -1,0 +1,12 @@
+﻿<Window x:Class="CodexPetFocus.App.BannerWindow"
+ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+ AllowsTransparency="True" Background="Transparent" WindowStyle="None"
+ ShowActivated="False" ShowInTaskbar="False" Topmost="True"
+ SizeToContent="WidthAndHeight" ResizeMode="NoResize" Focusable="False">
+ <Border Background="#EE15231F" BorderBrush="#99B8E5C8" BorderThickness="1"
+         CornerRadius="10" Padding="13,8">
+  <TextBlock x:Name="BannerText" Foreground="#F4FFF8" FontFamily="Microsoft YaHei UI"
+             FontSize="13" FontWeight="SemiBold"/>
+ </Border>
+</Window>

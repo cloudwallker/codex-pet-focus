@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <AssemblyName>CodexPetFocus.App</AssemblyName>
+    <RootNamespace>CodexPetFocus.App</RootNamespace>
+    <Version>0.1.0</Version>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Using Remove="System.Windows.Forms" />
+    <Using Remove="System.Drawing" />
+    <ProjectReference Include="../CodexPetFocus.Core/CodexPetFocus.Core.csproj" />
+    <ProjectReference Include="../CodexPetFocus.Native/CodexPetFocus.Native.csproj" />
+  </ItemGroup>
+</Project>

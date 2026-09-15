@@ -1,0 +1,17 @@
+.tools/
+.superpowers/
+AGENTS.md
+**/AGENTS.md
+**/bin/
+**/obj/
+artifacts/
+.vs/
+*.user
+plugins/*/app/
+plugins/*/README.md
+plugins/*/LICENSE
+plugins/*/COMPATIBILITY.md
+
+**/__pycache__/
+plugins/*/VALIDATION.md
+plugins/*/REFERENCES.md

@@ -1,0 +1,20 @@
+{
+    "name":  "codex-pet-focus",
+    "version":  "0.1.0",
+    "description":  "Codex 原生桌宠的离线任务计时助手。",
+    "author":  {
+                   "name":  "Local developer"
+               },
+    "skills":  "./skills/",
+    "interface":  {
+                      "displayName":  "Codex Pet Focus",
+                      "shortDescription":  "今日计划、专注计时与原桌宠头顶横幅。",
+                      "longDescription":  "Windows 本地助手管理今日任务，启停计时并跟随原桌宠显示横幅。日常操作无需模型调用，自动动作仅在兼容性验证通过后提供。",
+                      "developerName":  "Local developer",
+                      "category":  "Productivity",
+                      "capabilities":  [
+
+                                       ],
+                      "defaultPrompt":  "启动 Codex Pet Focus 本地任务助手。"
+                  }
+}
