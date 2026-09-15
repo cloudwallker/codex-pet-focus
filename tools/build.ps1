@@ -22,7 +22,9 @@ try {
     $readme = [IO.File]::ReadAllText((Join-Path $repo 'README.md'))
     $readme = $readme.Replace('(docs/compatibility.md)', '(COMPATIBILITY.md)').Replace('(docs/references.md)', '(REFERENCES.md)').Replace('(docs/validation.md)', '(VALIDATION.md)')
     [IO.File]::WriteAllText((Join-Path $plugin 'README.md'), $readme, (New-Object Text.UTF8Encoding $false))
-    Copy-Item -LiteralPath (Join-Path $repo 'README_EN.md') -Destination (Join-Path $plugin 'README_EN.md')
+    $readmeEnglish = [IO.File]::ReadAllText((Join-Path $repo 'README_EN.md'))
+    $readmeEnglish = $readmeEnglish.Replace('(docs/compatibility.md)', '(COMPATIBILITY.md)').Replace('(docs/references.md)', '(REFERENCES.md)').Replace('(docs/validation.md)', '(VALIDATION.md)')
+    [IO.File]::WriteAllText((Join-Path $plugin 'README_EN.md'), $readmeEnglish, (New-Object Text.UTF8Encoding $false))
     Copy-Item -LiteralPath (Join-Path $repo 'docs/references.md') -Destination (Join-Path $plugin 'REFERENCES.md')
     Copy-Item -LiteralPath (Join-Path $repo 'LICENSE') -Destination $plugin
     $validation = [IO.File]::ReadAllText((Join-Path $repo 'docs/validation.md')).Replace('(compatibility.md)', '(COMPATIBILITY.md)')
