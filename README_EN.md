@@ -1,8 +1,12 @@
 # Codex Pet Focus
 
-Codex Pet Focus is an offline Windows focus timer that augments the native Codex desktop pet without replacing it.
+### An offline Windows focus timer beside your Codex pet
 
-**中文简介：** Windows 离线专注计时助手，在 Codex 原桌宠旁显示当前任务和用时。
+**Turn today's plan into timed tasks and keep the active task and elapsed time beside the native Codex desktop pet. Manage tasks locally, with no network access or model calls during everyday use.**
+
+English | [简体中文](README.md)
+
+[Install and run](#install-and-run) · [Build from source](#build-from-source) · [Compatibility and limits](docs/compatibility.md)
 
 ## Features
 

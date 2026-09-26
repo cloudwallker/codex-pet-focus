@@ -1,10 +1,14 @@
 # Codex Pet Focus
 
-[English](README_EN.md) | [简体中文](README.md)
+### An offline Windows focus timer beside your Codex pet
 
-Windows 上增强 **Codex 原桌宠**的离线任务计时助手。日常通过本地窗口操作，不调用模型、不联网。
+**Turn today's plan into timed tasks and keep the active task and elapsed time beside the native Codex desktop pet. Manage tasks locally, with no network access or model calls during everyday use.**
 
-**English overview:** An offline Windows focus timer that shows the active task beside the native Codex desktop pet.
+**把今日计划变成可计时的任务，让当前任务与用时显示在 Codex 原桌宠旁。日常通过 Windows 本地窗口管理任务，无需联网或调用模型。**
+
+[English](README_EN.md) | 简体中文
+
+[使用发布包](#使用发布包) · [从源码构建](#从源码构建) · [兼容性与限制](docs/compatibility.md)
 
 ## 当前功能
 
