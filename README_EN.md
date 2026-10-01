@@ -8,6 +8,9 @@ English | [简体中文](README.md)
 
 [Install and run](#install-and-run) · [Build from source](#build-from-source) · [Compatibility and limits](docs/compatibility.md)
 
+
+![codex-pet-focus](docs/images/cartoon-infographic.png)
+
 ## Features
 
 - Add today's plan with one task per line.

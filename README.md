@@ -10,6 +10,9 @@
 
 [使用发布包](#使用发布包) · [从源码构建](#从源码构建) · [兼容性与限制](docs/compatibility.md)
 
+
+![codex-pet-focus](docs/images/cartoon-infographic.png)
+
 ## 当前功能
 
 - 今日计划逐行加入任务；启动、暂停、继续、完成。
