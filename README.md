@@ -13,6 +13,10 @@
 
 ![codex-pet-focus](docs/images/cartoon-infographic.png)
 
+今日计划界面保留深色薄荷绿外观，提供明确的新增任务标签、按下反馈和可见键盘焦点。窗口缩小或显示缩放增大时可滚动访问任务与设置。
+
+The daily planner keeps its dark mint identity with a visible task-input label, pressed feedback and keyboard focus. Scrollable content keeps tasks and settings reachable in smaller windows or at higher display scaling.
+
 ## 当前功能
 
 - 今日计划逐行加入任务；启动、暂停、继续、完成。

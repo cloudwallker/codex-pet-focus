@@ -1,11 +1,11 @@
-﻿<Window x:Class="CodexPetFocus.App.MainWindow"
+<Window x:Class="CodexPetFocus.App.MainWindow"
  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
- Title="Codex Pet Focus · 今日计划" Width="920" Height="760" MinWidth="730" MinHeight="620" WindowStartupLocation="CenterScreen" Background="#111923" Foreground="#EEF4F8" FontFamily="Microsoft YaHei UI">
- <Grid Margin="28">
+ Title="Codex Pet Focus · 今日计划" Width="920" Height="760" MinWidth="640" MinHeight="620" WindowStartupLocation="CenterScreen" Background="#111923" Foreground="#EEF4F8" FontFamily="Segoe UI, Microsoft YaHei UI" FontSize="15" UseLayoutRounding="True" SnapsToDevicePixels="True">
+ <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled"><Grid Margin="24" MinHeight="650">
   <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="*"/><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
   <DockPanel Margin="0,0,0,22">
-   <StackPanel DockPanel.Dock="Right" HorizontalAlignment="Right"><TextBlock Text="{Binding HeaderDate}" Foreground="#A6B8C8" FontSize="13"/><TextBlock Text="轻一点，专注眼前的一件事。" Foreground="#8095A8" Margin="0,6,0,0"/></StackPanel>
+   <StackPanel DockPanel.Dock="Right" HorizontalAlignment="Right"><TextBlock Text="{Binding HeaderDate}" Foreground="#A6B8C8" FontSize="13"/><TextBlock Text="轻一点，专注眼前的一件事。" Foreground="{StaticResource MutedBrush}" Margin="0,6,0,0"/></StackPanel>
    <StackPanel><TextBlock Text="Codex Pet Focus" FontSize="27" FontWeight="SemiBold"/><TextBlock Text="今日计划" FontSize="14" Foreground="#B8E5C8" Margin="0,5,0,0"/></StackPanel>
   </DockPanel>
   <Grid Grid.Row="1" Margin="0,0,0,20">
@@ -14,23 +14,23 @@
    <Border Grid.Column="1" Background="#1C2938" CornerRadius="12" Padding="18" Margin="0,0,12,0"><StackPanel><TextBlock Text="已完成" Foreground="#A6B8C8"/><TextBlock Text="{Binding CompletionSummary}" FontSize="28" Margin="0,8,0,0"/></StackPanel></Border>
    <Border Grid.Column="2" Background="#1C2938" CornerRadius="12" Padding="18"><StackPanel><TextBlock Text="本地保存" Foreground="#A6B8C8"/><TextBlock Text="离线可用" FontSize="22" Margin="0,12,0,0"/></StackPanel></Border>
   </Grid>
-  <DockPanel Grid.Row="2" Margin="0,0,0,12">
+  <DockPanel Grid.Row="2" Margin="0,0,0,12" LastChildFill="True">
    <Button DockPanel.Dock="Right" Content="暂停当前任务" Click="PauseAllClick" Margin="10,0,0,0"/>
    <Button DockPanel.Dock="Right" Content="转入昨日未完成" Click="CarryYesterdayClick"/>
-   <TextBlock Text="任务清单" VerticalAlignment="Center" FontSize="17" FontWeight="SemiBold"/>
+   <TextBlock Text="下一步 · 任务清单" VerticalAlignment="Center" FontSize="17" FontWeight="SemiBold"/>
   </DockPanel>
-  <Border Grid.Row="3" Background="#151F2C" CornerRadius="12" Padding="12">
+  <Border Grid.Row="3" Background="#151F2C" BorderBrush="#334858" BorderThickness="1" CornerRadius="12" Padding="12" MinHeight="170">
    <Grid>
-    <TextBlock Text="把今天想做的事写在下方。&#10;每行一个任务，开始时按下“启动”。" Visibility="{Binding EmptyVisibility}" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#8FA4B8" FontSize="15" LineHeight="28"/>
+    <TextBlock Text="把今天想做的事写在下方。&#10;每行一个任务，开始时按下“启动”。" Visibility="{Binding EmptyVisibility}" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{StaticResource MutedBrush}" FontSize="15" LineHeight="28"/>
     <ScrollViewer VerticalScrollBarVisibility="Auto"><ItemsControl ItemsSource="{Binding Tasks}">
      <ItemsControl.ItemTemplate><DataTemplate>
       <Border Background="#1E2C3C" CornerRadius="9" Padding="12" Margin="0,0,0,9">
        <Grid><Grid.ColumnDefinitions><ColumnDefinition Width="28"/><ColumnDefinition Width="*"/><ColumnDefinition Width="110"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions>
-        <CheckBox IsChecked="{Binding Completed, Mode=OneWay}" Tag="{Binding Id}" Checked="CompleteChanged" Unchecked="CompleteChanged" VerticalAlignment="Center" ToolTip="标记完成 / 取消完成"/>
-        <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="4,0,12,0"><TextBlock Text="{Binding Title}" TextTrimming="CharacterEllipsis" ToolTip="{Binding Title}" FontSize="14"/><TextBlock Text="{Binding Status}" Foreground="#8FA4B8" FontSize="11" Margin="0,4,0,0"/></StackPanel>
+        <CheckBox IsChecked="{Binding Completed, Mode=OneWay}" Tag="{Binding Id}" Checked="CompleteChanged" Unchecked="CompleteChanged" VerticalAlignment="Center" ToolTip="标记完成 / 取消完成" AutomationProperties.Name="{Binding Title, StringFormat=标记任务完成：{0}}"/>
+        <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="4,0,12,0"><TextBlock Text="{Binding Title}" TextTrimming="CharacterEllipsis" ToolTip="{Binding Title}" FontSize="14"/><TextBlock Text="{Binding Status}" Foreground="{StaticResource MutedBrush}" FontSize="13" Margin="0,4,0,0"/></StackPanel>
         <TextBlock Grid.Column="2" Text="{Binding Elapsed}" VerticalAlignment="Center" FontFamily="Cascadia Code,Consolas" FontSize="15" Foreground="#B8E5C8"/>
-        <Button Grid.Column="3" Content="启动" Tag="{Binding Id}" IsEnabled="{Binding CanStart}" Click="StartTaskClick" Style="{StaticResource PrimaryButton}" Margin="0,0,8,0"/>
-        <Button Grid.Column="4" Content="停止" Tag="{Binding Id}" IsEnabled="{Binding IsRunning}" Click="StopTaskClick"/>
+        <Button Grid.Column="3" AutomationProperties.Name="{Binding Title, StringFormat=启动任务：{0}}" Content="启动" Tag="{Binding Id}" IsEnabled="{Binding CanStart}" Click="StartTaskClick" Style="{StaticResource PrimaryButton}" Margin="0,0,8,0"/>
+        <Button Grid.Column="4" AutomationProperties.Name="{Binding Title, StringFormat=停止任务：{0}}" Content="停止" Tag="{Binding Id}" IsEnabled="{Binding IsRunning}" Click="StopTaskClick"/>
        </Grid>
       </Border>
      </DataTemplate></ItemsControl.ItemTemplate>
@@ -38,8 +38,8 @@
    </Grid>
   </Border>
   <Grid Grid.Row="4" Margin="0,16,0,0"><Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions>
-   <TextBox x:Name="PlanInput" Height="88" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" ToolTip="输入今日计划，每行一个任务" AutomationProperties.Name="今日计划输入"/>
-   <Button Grid.Column="1" Content="加入今日" Click="AddPlanClick" Style="{StaticResource PrimaryButton}" Margin="12,0,0,0" Width="105"/>
+   <StackPanel><TextBlock Text="新增任务 · 每行一个任务" Foreground="{StaticResource MutedBrush}" Margin="0,0,0,8"/><TextBox x:Name="PlanInput" Height="88" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" ToolTip="输入今日计划，每行一个任务" AutomationProperties.Name="今日计划输入"/></StackPanel>
+   <Button Grid.Column="1" Content="加入今日" Click="AddPlanClick" Style="{StaticResource PrimaryButton}" Margin="12,28,0,0" Width="105"/>
   </Grid>
   <StackPanel Grid.Row="5" Margin="0,14,0,0">
    <TextBlock Text="{Binding StatusMessage}" Foreground="#F1BF84" TextWrapping="Wrap" Margin="0,0,0,8"/>
@@ -48,12 +48,12 @@
      <CheckBox x:Name="DoNotDisturbBox" Content="勿扰" Checked="DoNotDisturbChanged" Unchecked="DoNotDisturbChanged" Margin="0,0,18,0"/>
      <CheckBox x:Name="StartupBox" Content="开机启动" Checked="StartupChanged" Unchecked="StartupChanged"/>
     </StackPanel>
-    <TextBlock Text="{Binding PetStatus}" Foreground="#8FA4B8" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" ToolTip="{Binding PetStatus}"/>
+    <TextBlock Text="{Binding PetStatus}" Foreground="{StaticResource MutedBrush}" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" ToolTip="{Binding PetStatus}"/>
    </DockPanel>
    <DockPanel Margin="0,10,0,0">
     <Button DockPanel.Dock="Right" Content="手动归位（验证未通过）" IsEnabled="False" Padding="10,5"/>
     <CheckBox Content="自动动作（验证未通过）" IsEnabled="False" ToolTip="原生 jumping 兼容性验证未通过，当前版本不会控制或移动原桌宠。"/>
    </DockPanel>
   </StackPanel>
- </Grid>
+ </Grid></ScrollViewer>
 </Window>

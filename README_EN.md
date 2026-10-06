@@ -11,6 +11,10 @@ English | [简体中文](README.md)
 
 ![codex-pet-focus](docs/images/cartoon-infographic.png)
 
+The daily planner keeps its dark mint identity with a visible task-input label, pressed feedback and keyboard focus. Scrollable content keeps tasks and settings reachable in smaller windows or at higher display scaling.
+
+今日计划界面保留深色薄荷绿外观，提供可见输入标签、按下反馈和键盘焦点，较小窗口及较大显示缩放下可滚动访问任务与设置。
+
 ## Features
 
 - Add today's plan with one task per line.
